@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Quiz App</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">AWS Quiz Challenge</div>
+        <div class="nav-links">
+            <a href="#" class="active" data-page="welcome">Home</a>
+            <a href="#" data-page="quiz">Quiz</a>
+            <a href="#" data-page="leaderboard">Leaderboard</a>
+            <a href="#" data-page="about">About</a>
+        </div>
+    </nav>
+
+    <div id="welcome" class="page active">
+        <div class="welcome-container">
+            <h1>Welcome to AWS Quiz Challenge!</h1>
+            <div class="welcome-form">
+                <input type="text" id="username" placeholder="Enter your name" />
+                <button id="start-quiz" class="btn-primary">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="quiz" class="page">
+        <div class="quiz-container">
+            <div id="quiz-content">
+                <!-- Quiz content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="leaderboard" class="page">
+        <div class="leaderboard-container">
+            <h2>🏆 Leaderboard</h2>
+            <div class="leaderboard-list" id="leaders"></div>
+        </div>
+    </div>
+
+    <div id="about" class="page">
+        <div class="about-container">
+            <h2>About AWS Quiz Challenge</h2>
+            <div class="about-content">
+                <p>This project is a comprehensive AWS knowledge assessment tool built with modern web technologies.</p>
+                <h3>Technologies Used:</h3>
+                <ul>
+                    <li>HTML5, CSS3, and JavaScript</li>
+                    <li>AWS Lambda for backend services</li>
+                    <li>Amazon DynamoDB for data storage</li>
+                    <li>Amazon API Gateway for RESTful APIs</li>
+                    <li>Hosted website files on Amazon S3</li>
+                    <li>Deployed using AWS Amplify</li>
+                </ul>
+                <div class="architecture-image">
+                    <h3>System Architecture</h3>
+                    <img src="archi.png" alt="AWS Architecture Diagram" class="archi-img">
+                </div>
+                <div class="creator-info">
+                    <p>Created with <i class="fas fa-heart"></i> by Omar</p>
+                    <div class="social-links">
+                        <a href="https://github.com/omar99elnemr/aws-quiz-app" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>

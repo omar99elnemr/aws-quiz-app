@@ -1,0 +1,34 @@
+{
+  "scores": [
+    {
+      "name": "John Smith",
+      "score": 90,
+      "completionTime": 245,
+      "date": "2024-03-15T10:30:00Z"
+    },
+    {
+      "name": "Sarah Johnson",
+      "score": 85,
+      "completionTime": 280,
+      "date": "2024-03-15T11:15:00Z"
+    },
+    {
+      "name": "Michael Brown",
+      "score": 95,
+      "completionTime": 210,
+      "date": "2024-03-15T12:00:00Z"
+    },
+    {
+      "name": "Emily Davis",
+      "score": 80,
+      "completionTime": 295,
+      "date": "2024-03-15T13:45:00Z"
+    },
+    {
+      "name": "David Wilson",
+      "score": 100,
+      "completionTime": 180,
+      "date": "2024-03-15T14:20:00Z"
+    }
+  ]
+} 
