@@ -1,7 +1,6 @@
 # AWS Quiz Challenge
 
-**[AWS Quiz Challenge Live Demo](https://staging.d31ipwcs7w7err.amplifyapp.com/)** | **[🚧 Feature request](https://github.com/omar99elnemr/aws-quiz-app/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)** | **[🐛 Bug Report](https://github.com/omar99elnemr/aws-quiz-app/issues/new?assignees=&labels=bug&template=bug_report.md&title=)** | **[❓ General Question](https://github.com/omar99elnemr/aws-quiz-app/issues/new?assignees=&labels=question&template=general_question.md&title=)**
-
+**[AWS Quiz Challenge Live Demo](https://staging.d31ipwcs7w7err.amplifyapp.com/)** | | **[🐛 Bug Report](https://github.com/omar99elnemr/aws-quiz-app/issues/new?assignees=&labels=bug&template=bug_report.md&title=)** 
 **Note**: This project is designed to stay within AWS Free Tier limits and demonstrates serverless architecture best practices.
 
 ## Table of Content
