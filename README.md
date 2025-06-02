@@ -1,6 +1,6 @@
 # AWS Quiz Challenge
 
-**[AWS Quiz Challenge Live Demo](https://staging.d31ipwcs7w7err.amplifyapp.com/)** 
+**[AWS Quiz Challenge Live Demo](https://staging.d31ipwcs7w7err.amplifyapp.com/)**   
 **Note**: This project is designed to stay within AWS Free Tier limits and demonstrates serverless architecture best practices.
 
 ## Table of Content
