@@ -70,24 +70,37 @@ let questionOptions = {};
 
 // Navigation
 document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const page = e.target.dataset.page;
-    navigateTo(page);
-  });
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const page = e.target.closest('a').dataset.page;
+        if (page) {
+            navigateTo(page);
+        }
+    });
 });
 
 function navigateTo(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  
-  document.getElementById(page).classList.add('active');
-  document.querySelector(`[data-page="${page}"]`).classList.add('active');
-  currentPage = page;
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    // Remove active class from all nav links
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    
+    // Show selected page
+    const selectedPage = document.getElementById(page);
+    if (selectedPage) {
+        selectedPage.classList.add('active');
+        // Add active class to corresponding nav link
+        const activeLink = document.querySelector(`[data-page="${page}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+        currentPage = page;
 
-  if (page === 'leaderboard') {
-    fetchLeaderboard();
-  }
+        // Special handling for about page
+        if (page === 'about') {
+            showAbout();
+        }
+    }
 }
 
 // Toast notification function
@@ -578,8 +591,51 @@ function showAbout() {
 document.addEventListener('DOMContentLoaded', () => {
     const aboutLink = document.querySelector('[data-page="about"]');
     if (aboutLink) {
-        aboutLink.addEventListener('click', () => {
-            showAbout();
+        aboutLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigateTo('about');
         });
     }
 });
+
+// Text changing animation for About link
+const changingText = document.querySelector('.changing-text');
+const texts = JSON.parse(changingText.dataset.text);
+let currentIndex = 0;
+let currentText = '';
+let isDeleting = false;
+let typingSpeed = 100; // Speed for typing
+let deletingSpeed = 50; // Speed for deleting
+let pauseTime = 1000; // Time to pause at full text
+
+function typeText() {
+    const fullText = texts[currentIndex];
+    
+    if (isDeleting) {
+        // Deleting text
+        currentText = fullText.substring(0, currentText.length - 1);
+        changingText.textContent = currentText;
+        
+        if (currentText === '') {
+            isDeleting = false;
+            currentIndex = (currentIndex + 1) % texts.length;
+            setTimeout(typeText, 500); // Pause before typing next word
+        } else {
+            setTimeout(typeText, deletingSpeed);
+        }
+    } else {
+        // Typing text
+        currentText = fullText.substring(0, currentText.length + 1);
+        changingText.textContent = currentText;
+        
+        if (currentText === fullText) {
+            isDeleting = true;
+            setTimeout(typeText, pauseTime); // Pause at full text
+        } else {
+            setTimeout(typeText, typingSpeed);
+        }
+    }
+}
+
+// Start the typing animation
+typeText();
